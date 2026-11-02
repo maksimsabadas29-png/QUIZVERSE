@@ -1,0 +1,132 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUIZVERSE — Всесвіт вікторин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+        <div class="orb orb3"></div>
+    </div>
+
+    <header>
+        <div class="logo">QUIZ<span>VERSE</span></div>
+        <div class="header-info">THE UNIVERSE OF KNOWLEDGE</div>
+    </header>
+
+    <main>
+        <!-- Головне меню -->
+        <section id="home" class="screen active">
+            <div class="eyebrow">✦ ВІТАЄМО У ВСЕСВІТІ ЗНАНЬ ✦</div>
+            <h1>Наскільки ти<br><span>розумний?</span></h1>
+            <p class="subtitle">
+                Перевір свої знання у великій колекції
+                цікавих запитань з різних галузей.
+            </p>
+
+            <div class="stats">
+                <div class="stat">
+                    <strong id="question-count">24</strong>
+                    <span>ЗАПИТАННЯ</span>
+                </div>
+                <div class="stat">
+                    <strong>06</strong>
+                    <span>КАТЕГОРІЙ</span>
+                </div>
+                <div class="stat">
+                    <strong>∞</strong>
+                    <span>МОЖЛИВОСТЕЙ</span>
+                </div>
+            </div>
+
+            <div class="settings">
+                <label for="category">ОБЕРИ КАТЕГОРІЮ</label>
+                <select id="category">
+                    <option value="all">Усі категорії</option>
+                    <option value="science">Наука</option>
+                    <option value="history">Історія</option>
+                    <option value="geography">Географія</option>
+                    <option value="technology">Технології</option>
+                    <option value="nature">Природа</option>
+                    <option value="general">Загальні знання</option>
+                </select>
+
+                <label for="difficulty">СКЛАДНІСТЬ</label>
+                <select id="difficulty">
+                    <option value="all">Усі рівні</option>
+                    <option value="easy">Легкий</option>
+                    <option value="medium">Середній</option>
+                    <option value="hard">Складний</option>
+                </select>
+            </div>
+
+            <button class="start-btn" onclick="startQuiz()">
+                РОЗПОЧАТИ ВІКТОРИНУ <span>→</span>
+            </button>
+
+            <div class="best-score">
+                🏆 Твій найкращий результат: <span id="best-score">0</span>
+            </div>
+        </section>
+
+        <!-- Ігровий екран -->
+        <section id="game" class="screen">
+            <div class="game-top">
+                <span id="progress-text">ЗАПИТАННЯ 1 / 24</span>
+                <span id="timer">⏱ 600</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progress-bar"></div>
+            </div>
+
+            <div class="question-card">
+                <div class="question-category" id="question-category">
+                    НАУКА
+                </div>
+                <h2 id="question">Текст запитання</h2>
+                <div id="answers" class="answers"></div>
+            </div>
+
+            <div class="game-bottom">
+                <span>⭐ БАЛИ: <strong id="score">0</strong></span>
+                <button id="next-btn" onclick="nextQuestion()" disabled>
+                    НАСТУПНЕ →
+                </button>
+            </div>
+        </section>
+
+        <!-- Екран результатів -->
+        <section id="result" class="screen">
+            <div class="result-icon">🏆</div>
+            <div class="eyebrow">ВІКТОРИНУ ЗАВЕРШЕНО</div>
+            <h1>Твій <span>результат!</span></h1>
+
+            <div class="final-score">
+                <strong id="final-score">0</strong>
+                <span>БАЛІВ</span>
+            </div>
+
+            <h2 id="result-message">Чудова робота!</h2>
+            <p id="result-details"></p>
+
+            <button class="start-btn" onclick="startQuiz()">
+                ГРАТИ ЩЕ РАЗ ↻
+            </button>
+            <button class="secondary-btn" onclick="showScreen('home')">
+                ГОЛОВНЕ МЕНЮ
+            </button>
+        </section>
+    </main>
+
+    <footer>
+        QUIZVERSE © 2026 · CREATED WITH CURIOSITY
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
